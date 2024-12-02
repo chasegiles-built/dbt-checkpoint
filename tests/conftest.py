@@ -347,6 +347,51 @@ MANIFEST = {
                 "materialized": "snapshot",
             },
         },
+        "model.test.with_boolean_column_with_prefix": {
+            "patch_path": "project://bb/with_boolean_column_with_prefix.yml",
+            "path": "aa/bb/with_boolean_column_with_prefix.sql",
+            "columns": {
+                "is_boolean": {"data_type": "boolean", "name": "is_boolean"},
+                "COL2": {"data_type": "TEXT", "name": "COL2"},
+                "IS_ALSO_BOOLEAN": {"data_type": "BOOLEAN", "name": "IS_ALSO_BOOLEAN"},
+            },
+        },
+        "model.test.with_boolean_column_with_prefix_version": {
+            "patch_path": "project://bb/with_boolean_column_with_prefix.yml",
+            "path": "aa/bb/with_boolean_column_with_prefix_version_v1.sql",
+            "columns": {
+                "is_boolean": {"data_type": "boolean", "name": "is_boolean"},
+                "COL2": {"data_type": "TEXT", "name": "COL2"},
+                "IS_ALSO_BOOLEAN": {"data_type": "BOOLEAN", "name": "IS_ALSO_BOOLEAN"},
+            },
+            "version": 1,
+            "latest_version": 1,
+        },
+        "model.test.with_boolean_column_without_prefix": {
+            "patch_path": "project://bb/with_boolean_column_without_prefix.yml",
+            "path": "aa/bb/with_boolean_column_without_prefix.sql",
+            "columns": {
+                "COL1": {"data_type": "boolean", "name": "COL1"},
+                "COL2": {"data_type": "BOOLEAN", "name": "COL2"},
+                "COL3": {"data_type": "TEXT", "name": "COL3"},
+            },
+        },
+        "model.test.without_boolean_column_with_prefix": {
+            "patch_path": "project://bb/without_boolean_column_with_prefix.yml",
+            "path": "aa/bb/without_boolean_column_with_prefix.sql",
+            "columns": {
+                "is_not_boolean": {"data_type": "TEXT", "name": "is_not_boolean"},
+                "COL2": {"data_type": "TEXT", "name": "COL2"},
+            },
+        },
+        "model.test.without_boolean_column_without_prefix": {
+            "patch_path": "project://bb/without_boolean_column_without_prefix.yml",
+            "path": "aa/bb/without_boolean_column_without_prefix.sql",
+            "columns": {
+                "COL1": {"data_type": "TEXT", "name": "COL1"},
+                "COL2": {"data_type": "TEXT", "name": "COL2"},
+            },
+        },
     },
     "sources": {
         "source.source1.table1": {
@@ -473,36 +518,6 @@ CATALOG = {
             },
         },
         "model.test.only_model_cols": {"metadata": {}, "columns": {}},
-        "model.test.with_boolean_column_with_prefix": {
-            "metadata": {},
-            "columns": {
-                "is_boolean": {"type": "boolean", "name": "is_boolean"},
-                "COL2": {"type": "TEXT", "name": "COL2"},
-                "IS_ALSO_BOOLEAN": {"type": "BOOLEAN", "name": "IS_ALSO_BOOLEAN"},
-            },
-        },
-        "model.test.with_boolean_column_without_prefix": {
-            "metadata": {},
-            "columns": {
-                "COL1": {"type": "boolean", "name": "COL1"},
-                "COL2": {"type": "BOOLEAN", "name": "COL2"},
-                "COL3": {"type": "TEXT", "name": "COL3"},
-            },
-        },
-        "model.test.without_boolean_column_with_prefix": {
-            "metadata": {},
-            "columns": {
-                "is_not_boolean": {"type": "TEXT", "name": "is_not_boolean"},
-                "COL2": {"type": "TEXT", "name": "COL2"},
-            },
-        },
-        "model.test.without_boolean_column_without_prefix": {
-            "metadata": {},
-            "columns": {
-                "COL1": {"type": "TEXT", "name": "COL1"},
-                "COL2": {"type": "TEXT", "name": "COL2"},
-            },
-        },
     },
     "sources": {
         "source.test.ff.with_catalog_columns": {},
